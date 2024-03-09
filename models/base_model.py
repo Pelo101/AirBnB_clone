@@ -8,16 +8,15 @@ from datetime import datetime
 
 class BaseModel:
     """ A class that defines all common attributes/methods for other classes"""
-    
 
     def __init__(self, *args, **kwargs):
         """ Instantiation of a class and common attributes"""
 
         if kwargs:
             for key, value in kwargs.items():
-                if key in [ 'created_at', 'updated_at']:
+                if key in ['created_at', 'updated_at']:
                     value = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
-                    setattr(self, key, value)
+                    setattr(self, key, valuei)
                 elif key != '__class__':
                     setattr(self, key, value)
         else:
