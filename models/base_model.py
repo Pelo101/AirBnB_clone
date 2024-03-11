@@ -29,7 +29,7 @@ class BaseModel:
     def __str__(self):
         """Returns string representation of the class"""
         class_name = self.__class__.__name__
-        return f"[{class_name}{self.id}{self.__dict}]"
+        return f"[{}}({}){}".format(class_name ,self.id, self.__dict__)
 
     def save(self):
         """Updates the public instance attribute updated_at"""
