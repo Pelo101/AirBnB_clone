@@ -26,10 +26,6 @@ class BaseModel:
             self.updated_at = datetime.now()
             models.storage.new(self)
 
-    def __str__(self):
-        """Returns string representation of the class"""
-        return "[{}]({}){}".format(self.__class__.__name__, self.id, self.__dict__)
-
     def save(self):
         """Updates the public instance attribute updated_at"""
         self.updated_at = datetime.now()
@@ -42,3 +38,8 @@ class BaseModel:
         n_dict["updated_at"] = self.updated_at.strftime("%Y-%m-%dT%H:%M:%S.%f")
         n_dict['__class__'] = self.__class__.__name__
         return n_dict
+
+     def __str__(self):
+        """Returns string representation of the class"""
+        return "[{}]({}){}".format(self.__class__.__name__, self.id, self.__dict__)
+
